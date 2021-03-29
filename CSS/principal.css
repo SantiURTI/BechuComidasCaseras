@@ -1,0 +1,485 @@
+* {
+    text-decoration: none;
+    font-family: 'Oswald', sans-serif;
+    scroll-behavior: smooth;
+}
+
+
+header {
+    width: 100%;
+    overflow: hidden;
+}
+
+a:hover,  a:active,  a:visited,  a:link {
+    color: #1a1a1a;
+}
+/*---------------------------
+    Header Medidas y Style
+------------------------------*/
+
+.header-contianer {
+    background: #aaa;
+    position: relative;
+    width: 100%;
+    height: 30%;
+}
+
+/*------------------
+ Header Medidas Logo
+---------------------*/
+.header-logocontainer {
+    padding: 40px;
+    display: flex;
+    min-height: 180px;
+}
+
+.header-logobox {
+    position: relative;
+    width: 30vh;
+    height: 25vh;
+    min-width: 200px;
+    min-height: 170px;
+    margin: auto;
+}
+
+
+
+/*------------------
+  Header Style Logo
+---------------------*/
+
+.header-logocontainer {
+    background: linear-gradient(to top, #fff, #ccc);
+}
+
+.header-logobox {
+    background: #fff;
+    border-radius: 60% 60% 20% 20%;
+    padding: 20px;
+    padding-top: 10px;
+    box-shadow:  0px 0px 20px 5px #fff5;
+    transition: box-shadow 1s, transform .7s;
+    transform: scale(1);
+    animation-name: logo_carga1;
+    animation-duration: .6s;  
+    animation-iteration-count: 1;
+    animation-fill-mode: backwards;
+    animation-timing-function: cubic-bezier(.15,1.11,.75,.73);
+}
+.header-logobox img { 
+    position:   relative;   
+    min-height: 100px;
+    min-width:  100px;
+    transition: transform .3s;
+    animation-name: logo_carga2;
+    animation-duration: .4s;
+    animation-delay: .5s;
+    animation-fill-mode: backwards;
+    opacity: 1;
+    transform: scale(.7);
+}
+
+.header-logobox:hover {
+    box-shadow:  0px 0px 25px 5px #fff8;
+    transform: scale(1.1);
+}
+
+.header-logobox:hover img {
+    transform: scale(.9);
+}
+
+
+@keyframes logo_carga1 {
+    0% {
+        transform: scaleY(0);
+        border-radius: 50%;
+    }
+    70% {
+        transform: scaleY(.8);
+        border-radius: 50%;
+    }
+
+    100% {
+        border-radius: 60% 60% 20% 20%;
+        transform: scaleY(1);
+    }
+}
+
+@keyframes logo_carga2 {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(.7);
+    }
+}
+
+@media screen and (max-width: 700px){
+
+    @keyframes logo_carga2 {
+        0% {
+            opacity: 0;
+            transform: scale(0);
+
+        }
+
+        100% {
+            opacity: 1;
+            transform: scale(.7);
+        }
+    }
+
+    .header-logobox {
+        width: 30vh;
+        height: 25vh;
+    }
+    .header-logocontainer {
+        padding: 30px
+    }
+
+    .header-logobox img {
+        transform: scale(.7);
+    }
+
+    .header-logobox:hover {
+        transform: scale(1.05);
+    }
+
+    .header-logobox:hover img {
+        transform: scale(.75);
+    }
+}
+/*------------------
+  Header Style Nav
+---------------------*/
+.header-sticky {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    user-select: none;
+    z-index: 300;
+}
+
+.header-navcontainer {
+    background: linear-gradient(to top, #fffa, #fff);
+    width: 100%;
+    height: 60px;
+    display: flex;
+    min-height: 50px;
+    justify-content: center;
+    position: -webkit-sticky;
+    position: absolute;
+    margin: 0;
+}
+
+.header-navbox {
+    display: flex;
+    left: 30%;
+    margin: auto 30px;
+    background: #fff;
+    height: 30px;
+    padding: 5px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0px 10px 10px -10px #1a1a1a;
+    transform: scale(1);
+    transition: transform .3s;
+    animation-name: nav_carga;
+    animation-duration: 1s;
+    animation-fill-mode: backwards;
+}
+
+.header-navbox a {
+    display: block;    
+    min-width: 90px;
+    font-size: 17px;
+    animation-name: nav_carga2;
+    animation-duration: 1s;
+    animation-delay: .4s;
+    animation-fill-mode: backwards;
+}
+
+.header-navbox:hover {
+    transform: scale(1.2);
+}
+
+
+@media screen and (max-width: 700px) {
+    .header-navbox {
+        display: none;
+    }
+}
+
+@keyframes nav_carga {
+    0% {
+        margin: auto min(-50px, 5%);
+    }
+
+    100% {
+        margin: auto min(30px, 5%);
+    }
+}
+
+@keyframes nav_carga2 {
+    0% {
+        transform: scale(0);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+/*---------------------------
+    Aside Medidas y Style
+------------------------------*/
+
+aside {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 60px;
+}
+
+.aside-grandfather {
+    width: 80vw;
+    min-width: 300px;
+    max-width: 1000px;
+    height: 50vh;
+    min-height: 600px;
+    margin: 0 30px;
+    display: flex;
+    border-radius: 40px;
+    box-shadow: 0px 50px 100px -15px #f0294c;
+}
+
+.aside-wallpaper {
+    position: absolute;
+    width: 80vw;
+    max-width: 1000px;
+    height: 50vh;
+    min-height: 600px;
+    border-radius: 40px;
+    overflow: hidden;
+}
+
+.aside-wallpaper img {
+    object-fit: cover;
+    width: 1000px;
+    height: 1000px;
+}
+
+.aside-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    padding: 10px;
+    border-radius: 40px;
+    flex-wrap: wrap;
+    backdrop-filter: blur(5px);
+}
+/*--------------------------
+  Aside Style Titulo y fecha
+---------------------------*/
+
+.aside-titlecontainer, .aside-date {
+    color: #fff;
+}
+
+.aside-titlecontainer {
+    width: 100%;
+    height:100px;
+    padding: 20px 5px;
+    display: flex;
+    min-height: 100px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.aside-titlecontainer h2, .aside-date h3{
+    text-shadow: 0px 0px 5px #1a1a1aaf;
+}
+
+.aside-titlebox {
+    text-align: center;
+    font-size: 22px;
+    transform: translateY(20px);
+    box-shadow: 0px 5px 27px -10px #1a1a1a;
+    border-radius: 30px;
+    width: 300px;
+    height: 40px;
+}
+
+.aside-date {
+    display: inline-block;
+    transform: translate(6px, 6px);
+    height: 20px;
+    width: 180px;
+    position: absolute;
+    font-size: 13px;
+    align-items: center;
+    text-align: center;
+    border-radius: 30px;
+    box-shadow: 0px 3px 10px -7px #1a1a1a;
+}
+
+/*------------------
+  Aside Style Promos
+---------------------*/
+.aside-promocontainer {
+    position: relative;
+    background: linear-gradient(to top, #111, #2a2a2a);
+    width: 90%;
+    height: 80%;
+    margin: 0 auto;
+    padding: 0;
+    justify-content: center;
+    align-items: center;
+    border-radius: 30px 19px 19px 30px;
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+}
+
+/*------------------
+      Scrollbar
+---------------------*/
+
+.aside-promocontainer::-webkit-scrollbar {
+    background: transparent;
+
+}
+
+.aside-promocontainer::-webkit-scrollbar-thumb {
+    height: 300px;
+    background: #fffa;
+    border-radius: 0px 30px 30px 0px;
+}
+
+.aside-promocontainer::-webkit-scrollbar-thumb:hover {
+    background: #fff;
+}
+
+@media screen and (max-width: 1000px) {
+    .aside-promocontainer::-webkit-scrollbar  {
+        display: none;
+    }
+}
+
+
+
+.aside-promo {
+    position: relative;
+    width: 220px;
+    height: 300px;
+    background: #fff; 
+    margin: 30px 30px;
+    box-sizing: border-box;
+    display: inline-block;
+    box-shadow:  0px 0px 20px -5px #fff8;
+    border-radius: 40px;
+    transition: transform 1s,  box-shadow 1s;
+}
+
+.aside-imgbox {
+    position: relative;
+    overflow: hidden;
+    width: 220px;
+    height: 300px;
+    border-radius: 30px;
+}
+
+.aside-imgbox img {
+    object-fit: cover;
+    width: 220px;
+    height: 300px;
+    max-height: 300px;
+    transition: transform 1s, filter 1s;
+}
+
+
+.aside-promo:hover .aside-imgbox img {
+    filter: blur(2px);
+    transform: scale(1.2);
+}
+
+
+.aside-text {
+    position: absolute;
+    top: 250px;
+    left: 0px;
+    bottom: 0px;
+    right: 0px;
+    width: 220px;
+    height: 50px;
+    border-radius: 30px;
+    background: #fff;
+    transition: top .8s, height .8s;
+    transition-delay: .2s;
+} 
+
+.aside-textbox {
+    transform: scale(0);
+    text-align: center;
+    padding: 8px;
+    color: #1a1a1a;
+    transition: opacity .3s, transform .5s;
+    opacity: 0;
+    transition-delay: 0s;
+    overflow: hidden;
+    max-height: 240px
+}
+
+.aside-promo h3{
+    margin: auto 20px
+}
+
+.aside-promo:hover .aside-text {
+    transition-delay: 0s;
+    top: 60px;
+    height: 240px;   
+}
+
+.aside-promo:hover .aside-textbox  {
+    transition-delay: .2s;
+    opacity: 1;
+    transform: scale(1);
+   
+}
+
+.aside-textbox div {
+    position: relative;
+    margin: 10px 0
+}
+
+.aside-promo:hover {
+    transform: scale(1.07);
+    box-shadow:  0px 0px 16px 7px #fff8;
+}
+
+.aside-promo a div {
+    position: relative;
+    margin: 20px auto;
+    max-width: 100px;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px -5px #1a1a1a;
+    transition: box-shadow .4s;
+}
+
+.aside-promo a {
+    transition: font-size .4s;
+}
+
+.aside-promo a:hover  {
+    font-size: 20px;
+}
+
+.aside-promo a div:hover  {
+    box-shadow: 0px 5px 20px -6px #1a1a1a;
+}
